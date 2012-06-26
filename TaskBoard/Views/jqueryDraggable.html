@@ -1,0 +1,133 @@
+<html>
+ <head>
+ 
+ </head>
+  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js'></script>
+  <script type='text/javascript'>
+   $(document).ready(function() {
+		$(".task").draggable();
+		$(".task").click(function () {
+			$(this).remove();
+		});
+		$( "#planning" ).droppable({
+			drop: function( event, ui ) {
+				//$( this ).addClass( "ui-state-highlight" ).find( "p" ).html( "Dropped!" );
+				$("#planningStatusMsg").text("Task moved to planning. Top:" + ui.position.top.toString() + " Left: " + ui.position.left.toString());
+			}
+		});
+		$("#addTask").click(function() {
+			$("body").append("<div class='task' style='position: absolute; top: 12px; left: 3px;'><p>New Task</p></div>");
+			$(".task").draggable();
+		});
+
+   });
+  </script>
+  <style>
+  body {
+    background-color: #FFFFFF;
+    /* background-image: url("/images/gradientfromtop.gif");
+    background-repeat: repeat-x; */
+    color: #000000;
+    font-size: 11px;
+    margin: 0;
+	padding: 0;
+  }
+  .task {
+	height: 150px;
+	width: 150px;
+	background-color: #FFFF66;
+	margin-right: 5px;
+	-webkit-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 3px #000;
+	-ms-box-shadow: inset 0 0 3px #000;
+	box-shadow: inset 0 0 3px #000;
+	text-align: center;
+	cursor: move;
+  }
+  #backlog {
+	width: 250px;
+	height: 100%;
+	border: 2px solid #D1D1E0;
+	float: left;
+  }
+  #planning {
+	width: 350px;
+	height: 100%;
+	border: 2px solid #D1D1E0;
+	float: left;
+  }
+  #inProcess {
+	width: 450px;
+	height: 100%;
+	border: 2px solid #D1D1E0;
+	float: left;
+  }
+  #qa {
+	width: 350px;
+	height: 100%;
+	border: 2px solid #D1D1E0;
+	float: left;
+  }
+  .header {
+  color: #fff;
+  text-shadow: #000 0 1px;
+  box-shadow: 5px;
+  padding: 5px;
+  background: -moz-linear-gradient(left center, rgb(0,0,0), rgb(79,79,79), rgb(21,21,21));
+  background: -webkit-gradient(linear, left top, right top,
+                               color-stop(0, rgb(0,0,0)),
+                               color-stop(0.50, rgb(79,79,79)),
+                               color-stop(1, rgb(21,21,21)));
+  background: -webkit-linear-gradient(left center, rgb(0,0,0), rgb(79,79,79), rgb(21,21,21));
+  background: -ms-linear-gradient(left center, rgb(0,0,0), rgb(79,79,79), rgb(21,21,21));
+  border-bottom: 1px solid #ddd;
+  -webkit-border-top-left-radius: 10px;
+  -moz-border-radius-topleft: 10px;
+  -ms-border-radius-topleft: 10px;
+  border-top-left-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -ms-border-top-right-radius: 10px;
+  -moz-border-radius-topright: 10px;
+  border-top-right-radius: 10px;
+ }
+  </style>
+ </head>
+ <body>
+  <p id="addTask">Add a new task</p>
+  <div id="backlog">
+   <div class="header">
+	<P>Backlog</p>
+	<p id="backlogStatusMsg">.</p>
+   </div>
+  </div>
+  <div id="planning">
+   <div class="header">
+	<P>Planning</p>
+	<p id="planningStatusMsg">.</p>
+   </div>
+  </div>
+  <div id="inProcess">
+   <div class="header">
+	<P>In Process</p>
+	<p id="inprogressStatusMsg">.</p>
+   </div>
+  </div>
+  <div id="qa">
+   <div class="header">
+	<P>Ready For QA</p>
+	<p id="qaStatusMsg">.</p>
+   </div>
+  </div>
+  
+ 
+  <div class="task" style="position: absolute; top: 12px; left: 3px;">
+   Task one
+  </div>
+  <div class="task" style="position: absolute; top: 12px; left: 3px;">
+   Task two
+  </div>
+ </body>
