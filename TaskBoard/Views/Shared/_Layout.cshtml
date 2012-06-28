@@ -9,9 +9,24 @@
         <script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
 
-        <script language="javascript" type="text/javascript">
+        <script type='text/javascript'>
             $(document).ready(function () {
+                $(".task").draggable();
+                $(".taskColumn").resizable();
                 
+                $(".task").click(function () {
+                    $(this).remove();
+                });
+                $("#planning").droppable({
+                    drop: function (event, ui) {
+                        $("#planningStatusMsg").text("Task moved to planning. Top:" + ui.position.top.toString() + " Left: " + ui.position.left.toString());
+                    }
+                });
+                $("#addTask").click(function () {
+                    $("body").append("<div class='task' style='position: absolute; top: 12px; left: 3px;'><p>New Task</p></div>");
+                    $(".task").draggable();
+                });
+
             });
         </script>
         <link href="~/CSS/Site.css" rel="stylesheet" media="screen" type="text/css"/>
@@ -19,7 +34,7 @@
     </head>
     <body>
         
-        <div id="body">
+        <div id="mainContent">
             @RenderSection("featured", required: false)
             <section class="content-wrapper main-content clear-fix">
                 @RenderBody()

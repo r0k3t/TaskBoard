@@ -115,6 +115,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Content Include="CSS\Site.css" />
     <Content Include="Global.asax" />
+    <Content Include="Shared\Images\bg.png" />
     <Content Include="Views\jqueryDraggable.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

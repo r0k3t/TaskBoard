@@ -1,2 +1,117 @@
 ﻿body {
+    background-color: #FFFFFF;
+    /* background-image: url("/shared/images/bg.png");
+    background-repeat: repeat-x;*/
+    color: #000000;
+    font-family: "Arial", sans-serif;
+    font-size: 12px;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+}
+
+.task {
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -ms-box-shadow: inset 0 0 3px #000;
+    -webkit-border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 3px #000;
+    background-color: #FFFF66;
+    border-radius: 10px;
+    box-shadow: inset 0 0 3px #000;
+    cursor: move;
+    height: 150px;
+    margin-right: 5px;
+    text-align: center;
+    width: 150px;
+}
+
+.taskColumn {
+    float: left;
+    height: 620px;
+    width: 8.4%;
+    margin-right: 2px;
+}
+
+.taskAreaHeader {
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    -ms-border-radius-topleft: 10px;
+    -ms-border-top-right-radius: 10px;
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    background: -moz-linear-gradient(top center, rgb(206, 206, 206), rgb(199, 199, 199), rgb(178, 178, 178));
+    background: -webkit-gradient(linear, left top, right top,
+                                 color-stop(0, rgb(206, 206, 206)),
+                                 color-stop(0.50, rgb(199, 199, 199)),
+                                 color-stop(1, rgb(178, 178, 178)));
+    background: -webkit-linear-gradient(top center, rgb(206, 206, 206), rgb(199, 199, 199), rgb(178, 178, 178));
+    background: rgb(206, 206, 206);
+    border-bottom: 1px solid #ddd;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 5px;
+    color: #e9e9e9;
+    height: 50px;
+    padding: 5px;   
+}
+
+.taskAreaHeader .title {
+    font-size: 13px;
+    font-weight: bolder;
+    text-align: center;
+    text-shadow: 0 0 0.2em #323232, 0 0 0.2em #323232, 0 0 0.2em #323232;
+}
+
+#tasksArea { width: 3000px; }
+
+#mainContent {
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+}
+
+#header 
+{
+    margin-top: 4px;
+    border-radius: 10px;
+    -webkit-border-bootom-left-radius: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    background: -moz-linear-gradient(top center, rgb(206, 206, 206), rgb(199, 199, 199), rgb(178, 178, 178));
+    background: -webkit-gradient(linear, left top, right top,
+                                 color-stop(0, rgb(206, 206, 206)),
+                                 color-stop(0.50, rgb(199, 199, 199)),
+                                 color-stop(1, rgb(178, 178, 178)));
+    background: -webkit-linear-gradient(top center, rgb(206, 206, 206), rgb(199, 199, 199), rgb(178, 178, 178));
+    background: rgb(206, 206, 206);
+    border-bottom: 1px solid #ddd;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 5px;
+    color: #e9e9e9;
+    height: 50px;
+    margin-bottom: 12px;
+    padding: 5px;
+}
+
+#footer {
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    background: -moz-linear-gradient(top center, rgb(206, 206, 206), rgb(199, 199, 199), rgb(178, 178, 178));
+    background: -webkit-gradient(linear, left top, right top,
+                                 color-stop(0, rgb(206, 206, 206)),
+                                 color-stop(0.50, rgb(199, 199, 199)),
+                                 color-stop(1, rgb(178, 178, 178)));
+    background: -webkit-linear-gradient(top center, rgb(206, 206, 206), rgb(199, 199, 199), rgb(178, 178, 178));
+    background: rgb(206, 206, 206);
+    border-bottom: 1px solid #ddd;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 5px;
+    color: #e9e9e9;
+    height: 50px;
+    margin-bottom: 12px;
+    padding: 5px;
+    clear: both;
 }

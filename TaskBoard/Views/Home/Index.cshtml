@@ -3,4 +3,33 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<div id="header">
+    <p id="addTask">Add a new task</p>
+</div>
+<div id="tasksArea">
+    <div id="backlog" class="taskColumn">
+        <div class="taskAreaHeader">
+            <p class="title">Backlog</p>
+            <p id="backlogStatusMsg"></p>
+        </div>
+    </div>
+    <div id="planning" class="taskColumn">
+        <div class="taskAreaHeader">
+            <p class="title">Planning</p>
+            <p id="planningStatusMsg"></p>
+        </div>
+    </div>
+    <div id="inProcess" class="taskColumn">
+        <div class="taskAreaHeader">
+            <p class="title">In Process</p>
+            <p id="inprogressStatusMsg"></p>
+        </div>
+    </div>
+    <div id="qa" class="taskColumn">
+        <div class="taskAreaHeader">
+            <p class="title">Ready For QA</p>
+            <p id="qaStatusMsg"></p>
+        </div>
+    </div>
+</div>
+<div id="footer"><p>Test</p></div>
