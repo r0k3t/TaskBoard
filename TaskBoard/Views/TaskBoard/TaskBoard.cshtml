@@ -1,8 +1,15 @@
-﻿@{
-    ViewBag.Title = "Index";
+﻿@using TaskBoard.Models
+@model IEnumerable<TaskBoard.Models.Task>
+
+@{
+    ViewBag.Title = "TaskBoard";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@foreach(var task in Model)
+{
+    <div class='task' style='position: absolute; top: 12px; left: 3px;'><p>@task.Name</p></div>
+}
 <div id="header">
     <a class="button" id="addNewTaskButton" href="#"><span>Add a new task</span></a> 
 </div>

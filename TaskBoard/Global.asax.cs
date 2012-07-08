@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Routing;
+using TaskBoard.Models;
 
 namespace TaskBoard
 {
@@ -14,6 +15,11 @@ namespace TaskBoard
     {
         protected void Application_Start()
         {
+            using (var context = new TaskManagerContext())
+            {
+                context.Database.Initialize(true);
+            }
+             ControllerBuilder.Current.SetControllerFactory(new TaskBoardControllerFactory());
             AreaRegistration.RegisterAllAreas();
 
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
