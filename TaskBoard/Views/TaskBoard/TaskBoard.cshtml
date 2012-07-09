@@ -6,10 +6,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@foreach(var task in Model)
-{
-    <div class='task' style='position: absolute; top: 12px; left: 3px;'><p>@task.Name</p></div>
-}
+
 <div id="header">
     <a class="button" id="addNewTaskButton" href="#"><span>Add a new task</span></a> 
 </div>
@@ -40,3 +37,9 @@
     </div>
 </div>
 <div id="footer"><p>Test</p></div>
+@foreach(var task in Model)
+{
+    var top = task.LocationTop + "px";
+    var left = task.LocationLeft + "px";
+    <div class='task' style='position: absolute; top: @top; left: @left;'><p>@task.Name</p></div>
+}

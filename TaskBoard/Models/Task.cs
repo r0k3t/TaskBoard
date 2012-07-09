@@ -19,5 +19,7 @@ namespace TaskBoard.Models
         public User CreatedBy { get; set; }
         public User UpdatedBy { get; set; }
         public Project Project { get; set; }
+        public int LocationTop { get; set; }
+        public int LocationLeft { get; set; }
     }
 }

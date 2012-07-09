@@ -20,6 +20,7 @@
                 $("#planning").droppable({
                     drop: function (event, ui) {
                         $("#planningStatusMsg").text("Task moved to planning. Top:" + ui.position.top.toString() + " Left: " + ui.position.left.toString());
+                        $(".task").draggable();
                     }
                 });
                 $("#addNewTaskButton").click(function (evt) {

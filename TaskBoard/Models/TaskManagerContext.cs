@@ -85,9 +85,28 @@ namespace TaskBoard.Models
                                       TaskOwnerId = user.UserId,
                                       TaskStatus = TaskStatus.Backlog,
                                       UpdatedBy = user,
-                                      UpdatedById = user.UserId
+                                      UpdatedById = user.UserId,
+                                      LocationLeft = 350,
+                                      LocationTop = 230
                                   };
                 dbContext.Tasks.Add(taskOne);
+                var taskTwo = new Task
+                {
+                    Project = projectOne,
+                    Name = "Task Numba' Two!",
+                    CreatedBy = user,
+                    CreatedById = user.UserId,
+                    Description = "Description",
+                    Owner = user,
+                    ProjectId = projectOne.ProjectId,
+                    TaskOwnerId = user.UserId,
+                    TaskStatus = TaskStatus.Backlog,
+                    UpdatedBy = user,
+                    UpdatedById = user.UserId,
+                    LocationLeft = 360,
+                    LocationTop = 290
+                };
+                dbContext.Tasks.Add(taskTwo);
                 base.Seed(dbContext);
             }
         }
