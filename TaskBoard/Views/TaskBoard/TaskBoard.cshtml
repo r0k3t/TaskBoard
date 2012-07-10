@@ -43,3 +43,11 @@
     var left = task.LocationLeft + "px";
     <div class='task' style='position: absolute; top: @top; left: @left;'><p>@task.Name</p></div>
 }
+
+<div id="newTaskDialog" style="display: none">
+    <p>Task</p>
+    <input type="text" id="taskName"/>
+    <p>Description</p>
+    <textarea rows="2" cols="20" id="taskDescription"></textarea> 
+    <p><input type="submit" value="Save" id="saveNewTaskButton"/></p>
+</div>

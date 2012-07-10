@@ -6,9 +6,10 @@
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
        
         <meta name="viewport" content="width=device-width" />
-        <script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-        <script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
-         <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/smoothness/jquery-ui.css" type="text/css" rel="Stylesheet" />
+        <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/smoothness/jquery-ui.css" type="text/css" rel="Stylesheet" />
+
+        <script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"> </script>
+        <script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"> </script>
         <script type='text/javascript'>
             $(document).ready(function () {
                 $(".task").draggable();
@@ -25,10 +26,34 @@
                 });
                 $("#addNewTaskButton").click(function (evt) {
                     evt.preventDefault();
-                    $("body").append("<div class='task' style='position: absolute; top: 12px; left: 3px;'><p>New Task</p></div>");
-                    $(".task").draggable();
+                    $('#newTaskDialog').dialog('open');
+                    
                 });
 
+                $('#saveNewTaskButton').click(function (evt) {
+                    evt.preventDefault();
+                    $.post("/TaskBoard/CreateTask", getTask(), function(result) {
+                            $("body").append("<div class='task' style='position: absolute; top: 12px; left: 3px;'><p>" + result.Name + "</p></div>");
+                            $(".task").draggable();
+                        });
+                    $('#newTaskDialog').dialog('close');
+                });
+
+                $('#newTaskDialog').dialog({
+                    title: "Add A New Task",
+                    autoOpen: false
+                });
+
+                function getTask() {
+                    var name = $("#taskName").val();
+                    var description = $("#taskDescription").val();
+                    return (name == "") ? null : {
+                        Name: name,
+                        Description: description
+                    };
+                }
+
+                
             });
         </script>
         <link href="~/CSS/Site.css" rel="stylesheet" media="screen" type="text/css"/>
